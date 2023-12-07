@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  routerLink="/dashboard/songs">
+        <ion-icon name ="chevron-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>IsaacMusic</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon slot="start" name="musical-notes"></ion-icon>
+          <ion-text>
+            <h1><strong>{{(song | async)?.songName}}</strong></h1>
+          </ion-text>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-text>
+            <h4>{{(song | async)?.artistName}}</h4>
+          </ion-text>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-icon slot="start" name="albums-outline"></ion-icon>
+          <ion-text>
+            <h4>{{(song | async)?.albumName}}</h4>
+          </ion-text>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-text>
+            <p>{{(song | async)?.songDescription}}</p>
+          </ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle><strong>Opciones:</strong></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button color="danger" (click)="deleteSong()">
+        Eliminar
+        <ion-icon name="trash" slot="start"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+

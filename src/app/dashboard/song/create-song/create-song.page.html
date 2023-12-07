@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  routerLink="/dashboard/songs">
+        <ion-icon name ="chevron-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>IsaacMusic</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Agrega una canción</ion-card-title>
+      <ion-card-subtitle>
+        Completa el formulario para una canción.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="createSongForm" (ngSubmit)="validateForm()">
+        <ion-list>
+
+          <ion-item>
+            <ion-label position="floating">Nombre: </ion-label>
+            <ion-input formControlName="songName" type="text"  ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating" >Nombre del artista: </ion-label>
+            <ion-input type="text" formControlName="artistName" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" >Nombre del album: </ion-label>
+            <ion-input formControlName="albumName" type="text"  ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" >Descripcion: </ion-label>
+            <ion-textarea rows="4" formControlName="songDescription" type="text"></ion-textarea>
+          </ion-item>
+        </ion-list>
+        <ion-button type="submit"  expand="block" color="primary" >Angregar cancion</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

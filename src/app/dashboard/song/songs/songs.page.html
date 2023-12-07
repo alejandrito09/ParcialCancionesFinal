@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      IsaacMusic
+    </ion-title>
+    <ion-buttons slot="end" >
+      <ion-button routerLink = "../create-song" shape="round">
+        <ion-icon name = "add" slot="start"></ion-icon>
+        Agregar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header padding>
+      <ion-card-title><strong>Lista de canciones</strong></ion-card-title>
+      <ion-card-subtitle>Canciones agregadas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines = "underfined">
+        <ion-item  *ngFor = "let song of songList | async" >
+          <ion-icon slot="end" name="settings-outline" routerLink = "../detail-song/{{song.id}}">
+          </ion-icon>
+          <ion-icon slot="start" name="musical-notes">
+          </ion-icon>
+          <ion-label>
+            <h2>{{song.songName}}</h2>
+            <p>{{song.artistName}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

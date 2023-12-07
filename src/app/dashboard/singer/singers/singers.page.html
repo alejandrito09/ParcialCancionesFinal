@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click) = "logout()">
+        <p>Cerrar sesion</p>
+        <ion-icon slot="end" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cantantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header color ="">
+      <ion-title>cantantes</ion-title>
+    </ion-list-header>
+    <ion-item>
+      <p>
+        Estos son los IsaacMusic
+      </p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor = "let signers of (signer | async)">
+      <ion-avatar slot="start">
+        <!-- <img src="assets/icon-avatar/avatar.png" /> -->
+      </ion-avatar>
+      <ion-label>
+        <h2>{{signer.name}}</h2>
+        <h3>{{signer.email}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

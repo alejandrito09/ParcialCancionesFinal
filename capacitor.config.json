@@ -1,0 +1,6 @@
+{
+  "appId": "io.musicpro.carloscelis",
+  "appName": "MusicPro",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
